@@ -1008,3 +1008,13 @@ To https://github.com/Irakiza44/GitExercises.git
  * [new branch]      ft/squashing -> ft/squashing
 branch 'ft/squashing' set up to track 'origin/ft/squashing'.
 ```
+
+## Bundle 5
+
+### Exercise 1
+```bash
+https://irakiza44.github.io/GitExercises/ (original)
+
+https://irakiza44.github.io/GitExercises-clone/ (clone link)
+
+```
