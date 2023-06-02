@@ -620,3 +620,163 @@ To https://github.com/Irakiza44/GitExercises-clone.git
  * [new branch]      main -> main
 
 ```
+
+
+### Exercise 2
+```bash
+
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (main)
+$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/footer)
+$ git add .
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/footer)
+$ git commit -m "adding a page that will contain our footer of page"
+[ft/footer e4eaffa] adding a page that will contain our footer of page
+ 1 file changed, 12 insertions(+)
+ create mode 100644 footer.html
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/footer)
+$ git add .
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/footer)
+$ git commit -m "second commit after adding a page that will contain our footer of page"   
+[ft/footer ce8c29f] second commit after adding a page that will contain our footer of page
+ 1 file changed, 7 insertions(+), 12 deletions(-)
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/footer)
+$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/footer)
+$ git push --set-upstream origin ft/footer1
+error: src refspec ft/footer1 does not match any
+error: failed to push some refs to 'https://github.com/Irakiza44/GitExercises.git'
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/footer)
+$ git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/footer)
+$ git push origin ft/footer
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 809 bytes | 404.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/Irakiza44/GitExercises/pull/new/ft/footer
+remote:
+To https://github.com/Irakiza44/GitExercises.git
+ * [new branch]      ft/footer -> ft/footer
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (main)
+$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/squashing)
+$ git status
+On branch ft/squashing
+nothing to commit, working tree clean
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/squashing)
+$ git merge --squash ft/footer
+Updating a79e778..ce8c29f
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 7 +++++++
+ 1 file changed, 7 insertions(+)
+ create mode 100644 footer.html
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/squashing)
+$ git log
+commit a79e778fc2de190d9e92d1bf4be611b41d5d726a (HEAD -> ft/squashing, origin/main, git-copy/main, main)
+Author: Your Name <you@example.com>
+Date:   Fri Jun 2 20:00:23 2023 +0200
+
+    updating home page in main and creation of a clone repo
+
+commit 8205e2d922d580ee957bfe0eec710a99fbdd74ed
+Author: Your Name <you@example.com>
+Date:   Fri Jun 2 19:48:56 2023 +0200
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/squashing)
+$ git status
+On branch ft/squashing
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   footer.html
+
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/squashing)
+$ git commit -m "footer changes squashing"
+[ft/squashing 5fcdeb9] footer changes squashing
+ 1 file changed, 7 insertions(+)
+ create mode 100644 footer.html
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/squashing)
+$ git log
+commit 5fcdeb918767a7dfa49f0393046897ee006bf2a0 (HEAD -> ft/squashing)
+Author: Your Name <you@example.com>
+Date:   Fri Jun 2 20:22:57 2023 +0200
+
+    footer changes squashing
+
+commit a79e778fc2de190d9e92d1bf4be611b41d5d726a (origin/main, git-copy/main, main)
+Author: Your Name <you@example.com>
+Date:   Fri Jun 2 20:00:23 2023 +0200
+
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/squashing)
+$ git push
+fatal: The current branch ft/squashing has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/squashing
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/squashing)
+$ git push --set-upstream origin ft/squashing
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 340 bytes | 340.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/Irakiza44/GitExercises/pull/new/ft/squashing
+remote:
+To https://github.com/Irakiza44/GitExercises.git
+ * [new branch]      ft/squashing -> ft/squashing
+branch 'ft/squashing' set up to track 'origin/ft/squashing'.
+```
