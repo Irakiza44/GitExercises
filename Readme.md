@@ -187,3 +187,85 @@ $ git reset --hard
 HEAD is now at a863758 stup my project with stashes
 
 ```
+
+### Exercise 2
+```bash
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/bundle-2)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (main)
+$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 640 bytes | 91.00 KiB/s, done.
+From https://github.com/Irakiza44/GitExercises
+   add1bae..337e810  main       -> origin/main
+Updating add1bae..337e810
+Fast-forward
+ About.html   |  12 +++++
+ Home.html    |  12 +++++
+ Readme.md    | 167 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Service.html |  12 +++++
+ 4 files changed, 203 insertions(+)
+ create mode 100644 About.html
+ create mode 100644 Home.html
+ create mode 100644 Service.html
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (main)
+$ git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/service-redesign)
+$ git status
+On branch ft/service-redesign
+nothing to commit, working tree clean
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/service-redesign)
+$ git status
+On branch ft/service-redesign
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Service.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/service-redesign)
+$ git add .
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/service-redesign)
+$ git commit -m "updating my services list"
+[ft/service-redesign cffdd2b] updating my services list
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/service-redesign)
+$ git push
+fatal: The current branch ft/service-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/service-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Didier@DESKTOP-CUJ952O MINGW64 ~/Desktop/Git Exercises (ft/service-redesign)
+$ git push --set-upstream origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 370 bytes | 123.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/Irakiza44/GitExercises/pull/new/ft/service-redesign        
+remote:
+To https://github.com/Irakiza44/GitExercises.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+```
